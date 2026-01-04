@@ -1,6 +1,0 @@
-Choc-o-holics -- Singleton Design Pattern
-Duck Simulation -- Strategy
-StarBuzz Coffee -- Decorator
-Weather Data -- Observer
-Pizza Factory - Factory
-
