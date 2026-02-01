@@ -11,7 +11,7 @@ public class SimplePlaylistIterator implements PlaylistIterator{
     public String next() {
         String song = "None";
         if(this.hasNext()) {
-            song = this.playlist.getSong(this.index);
+            song = this.playlist.getSongs().get(this.index);
         }
         this.index += 1;
         return song;

@@ -10,8 +10,8 @@ public class FavPlaylistIterator implements PlaylistIterator{
     @Override
     public String next() {
         String song = "None";
-        if(this.hasNext() && this.playlist.getSong(this.index).contains("fav")) {
-            song = this.playlist.getSong(this.index);
+        if(this.hasNext() && this.playlist.getSongs().get(this.index).contains("fav")) {
+            song = this.playlist.getSongs().get(this.index);
         }
         this.index += 1;
         return song;

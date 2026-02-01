@@ -17,14 +17,20 @@ public class Main {
 
         System.out.println("###Shuffle Iterator");
         ShufflePlaylistIterator shufflePlaylistIterator = new ShufflePlaylistIterator(playlist);
-//        while (shufflePlaylistIterator.hasNext()){
-//            System.out.println(shufflePlaylistIterator.next());
-//        }
+        while (shufflePlaylistIterator.hasNext()){
+            System.out.println(shufflePlaylistIterator.next());
+        }
 
         System.out.println("###Fav Iterator");
         FavPlaylistIterator favPlaylistIterator = new FavPlaylistIterator(playlist);
         while (favPlaylistIterator.hasNext()){
             System.out.println(favPlaylistIterator.next());
+        }
+
+        System.out.println("###Playlist's own iterator");
+        PlaylistIterator playlistIterator = playlist.makeIterator("fav");
+        while (playlistIterator.hasNext()){
+            System.out.println(playlistIterator.next());
         }
     }
 }

@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Playlist {
-    private List<String> songs;
+    private final List<String> songs;
 
     public Playlist() {
         this.songs = new ArrayList<>();
@@ -16,11 +16,16 @@ public class Playlist {
         return this.songs.size();
     }
 
-    public String getSong(int index) {
-        return this.songs.get(index);
-    }
-
     public void addSong(String song) {
         this.songs.add(song);
+    }
+
+    public PlaylistIterator makeIterator(String type) {
+        return switch (type) {
+            case "simple" -> new SimplePlaylistIterator(this);
+            case "shuffle" -> new ShufflePlaylistIterator(this);
+            case "fav" -> new FavPlaylistIterator(this);
+            default -> null;
+        };
     }
 }
