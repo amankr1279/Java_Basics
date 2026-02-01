@@ -6,3 +6,6 @@ StarBuzz Coffee and LowerCaseInputStream -- Decorator
 Weather Data -- Observer
 Pizza Factory - Factory
 Beverage-Machine -- Template
+Remote Control -- Command
+Student -- Adapter
+Playlist -- Iterator
