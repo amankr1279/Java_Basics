@@ -9,3 +9,4 @@ Beverage-Machine -- Template
 Remote Control -- Command
 Student -- Adapter
 Playlist -- Iterator
+SmartHome --Composite
