@@ -11,3 +11,7 @@ Student -- Adapter
 Playlist -- Iterator
 SmartHome -- Composite
 GumballMachine -- State
+
+---
+
+Directory `interview` contains standard LLD interview questions
