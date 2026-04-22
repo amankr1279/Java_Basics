@@ -21,7 +21,7 @@ public class Player {
         return symbol;
     }
 
-    public int[] makeMove() {
+    public Cell makeMove() {
         return this.moveStrategy.makeMove();
     }
 }

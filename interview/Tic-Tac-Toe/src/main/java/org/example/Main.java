@@ -13,7 +13,7 @@ public class Main {
          * Board is of NxN side. Default size is N = 3
          *
          * Further enhancements:-
-         * use a game listener with Observer pattern to notofy players
+         * use a game listener with Observer pattern to notify players
          */
         Game game = new Game();
         game.play();

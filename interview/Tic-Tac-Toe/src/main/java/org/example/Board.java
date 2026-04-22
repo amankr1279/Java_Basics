@@ -4,8 +4,8 @@ import org.example.symbol.Symbol;
 import org.example.symbol.SymbolBlank;
 
 public class Board {
-    Integer side;
-    Symbol[][] grid;
+    private final Integer side;
+    private final Symbol[][] grid;
 
     public Board(Integer side) {
         this.side = side;
@@ -28,7 +28,8 @@ public class Board {
         }
     }
 
-    public boolean isValid(int r, int c) {
+    public boolean isValid(Cell cell) {
+        int r = cell.getR(), c = cell.getC();
         if (r < 0 || r >= side){
             return false;
         }
@@ -38,7 +39,8 @@ public class Board {
         return grid[r][c].getPiece().contains("-");
     }
 
-    public void process(int r, int c, Symbol symbol) {
+    public void process(Cell cell, Symbol symbol) {
+        int r = cell.getR(), c = cell.getC();
         this.grid[r][c] = symbol;
     }
     
@@ -49,6 +51,18 @@ public class Board {
         if (xCnt == side) {
             System.out.println("PlayerX wins");
         }
+    }
+
+    public boolean checkDraw() {
+        for (int r = 0; r < side; r++) {
+            for (int c = 0; c < side; c++) {
+                if (grid[r][c].getPiece().contains("-")) {
+                    return false;
+                }
+            }
+        }
+        System.out.println("Match is draw!");
+        return true;
     }
 
     public boolean checkWin () {

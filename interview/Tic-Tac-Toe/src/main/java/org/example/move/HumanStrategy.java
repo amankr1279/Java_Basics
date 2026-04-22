@@ -1,18 +1,21 @@
 package org.example.move;
 
+import org.example.Cell;
+
 import java.util.Scanner;
 
 public class HumanStrategy implements MoveStrategy{
 
 
     @Override
-    public int[] makeMove() {
+    public Cell makeMove() {
         Scanner scanner = new Scanner(System.in);
-        int[] cell = new int[2];
+        int[] indices = new int[2];
         System.out.print("Enter row and column space-separated :");
         for (int i = 0; i < 2; i++) {
-            cell[i] = scanner.nextInt();
+            indices[i] = scanner.nextInt();
         }
+        Cell cell = new Cell(indices);
         return cell;
     }
 }

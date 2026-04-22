@@ -16,12 +16,11 @@ public class Game {
     }
 
     public void play() {
-        while (!board.checkWin()) {
+        while (!board.checkWin() && !board.checkDraw()) {
             board.printBoard();
-            int[] cell = currentPlayer.makeMove();
-            int r = cell[0], c = cell[1];
-            if (board.isValid(r, c)) {
-                board.process(r, c, currentPlayer.getSymbol());
+            Cell cell = currentPlayer.makeMove();
+            if (board.isValid(cell)){
+                board.process(cell, currentPlayer.getSymbol());
                 if (currentPlayer.equals(playerX)) {
                     currentPlayer = playerO;
                 } else {
