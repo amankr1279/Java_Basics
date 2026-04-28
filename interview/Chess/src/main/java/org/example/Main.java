@@ -17,5 +17,8 @@ public class Main {
          * piece --> move strategy and factory
          * move validation for evey piece
          */
+
+        Game game = new Game();
+        game.play();
     }
 }
