@@ -1,7 +1,6 @@
 package org.example;
 
 import org.example.move.HumanStrategy;
-import org.example.symbol.Symbol;
 import org.example.symbol.SymbolO;
 import org.example.symbol.SymbolX;
 

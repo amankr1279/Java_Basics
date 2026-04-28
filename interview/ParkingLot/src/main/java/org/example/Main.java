@@ -55,5 +55,10 @@ public class Main {
         parkingLot.parkCar(bikeSpot);
         ParkingSpot truckSpot = parkingLot.findParkingSpot(truck);
         parkingLot.parkCar(truckSpot);
+
+        /**
+         * Possible extension Multi-floor Parking --> user builder pattern
+         * 
+         */
     }
 }

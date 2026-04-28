@@ -1,7 +1,5 @@
 package org.example.vehicle;
 
-import org.example.payment.PaymentStrategy;
-
 public abstract class Vehicle {
     private String type;
     private final String licenseNumber;
