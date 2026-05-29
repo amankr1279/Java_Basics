@@ -40,14 +40,22 @@ public class Warehouse implements Observable {
 
     public void updateProduct(ProductCategory category, int quantity, String operation) {
         int currentStock = getProductStockCount(category);
+        Product product = productFactory.getProduct(category);
         if (operation.contains("add")) {
             if (!stocks.containsKey(category)) {
-                products.add(productFactory.getProduct(category));
+                products.add(product);
             }
-
             quantity += currentStock;
+            // Notify observes if even after addition the total stock count is below critical
+            if (quantity <= product.getCritical()) {
+                this.notifyObservers();
+            }
         } else {
             quantity = currentStock - quantity;
+            // Just when the product goes below critical from not critical, notify the observers
+            if (currentStock <= product.getCritical()) {
+                this.notifyObservers();
+            }
         }
         stocks.put(category, quantity);
     }

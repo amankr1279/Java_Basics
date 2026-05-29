@@ -47,7 +47,6 @@ public class InventoryManager {
     public void getStatus() {
         for (int i = 0; i < warehouseList.size(); i++) {
             Warehouse warehouse = warehouseList.get(i);
-            warehouse.notifyObservers();
             System.out.println("Warehouse" + i + " has total stocks:" + warehouse.getTotalStock());
 
         }
